@@ -1,8 +1,8 @@
 {
   "name": "vscode-naming-rules",
-  "displayName": "vscode-naming-rules",
+  "displayName": "Naming Rules",
   "description": "I allow you to set naming rules for your files. ",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "publisher": "markdrew",
   "repository": "https://github.com/cybersonic/vscode-naming-rules",
