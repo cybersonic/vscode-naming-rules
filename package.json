@@ -3,9 +3,13 @@
   "displayName": "vscode-naming-rules",
   "description": "I allow you to set naming rules for your files. ",
   "version": "0.0.1",
+  "license": "MIT",
+  "publisher": "markdrew",
+  "repository": "https://github.com/cybersonic/vscode-naming-rules",
   "engines": {
     "vscode": "^1.97.0"
   },
+  "icon": "./assets/logo.png",
   "categories": [
     "Other"
   ],
