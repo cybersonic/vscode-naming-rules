@@ -126,7 +126,7 @@ class NamingIssueDecorationProvider implements vscode.FileDecorationProvider {
 		this._onDidChangeFileDecorations.fire(Array.from(this.misnamedItems).map(uri => vscode.Uri.file(uri)));
 	}
 
-	provideFileDecoration(uri: vscode.Uri, token: vscode.CancellationToken): vscode.ProviderResult<vscode.FileDecoration> {
+	provideFileDecoration(uri: vscode.Uri, _token: vscode.CancellationToken): vscode.ProviderResult<vscode.FileDecoration> {
 
 
 		if (!this.misnamedItems.has(uri.fsPath)) {
