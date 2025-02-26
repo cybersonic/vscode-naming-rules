@@ -60,11 +60,12 @@ function vscodeRuleScan(diagnosticCollection: vscode.DiagnosticCollection, decor
 
 	let diagnosticStruct: { [key: string]: vscode.Diagnostic[] } = {};
 
-
 	// Clear existing diagnostics
 	diagnosticCollection.clear();
+
 	// Clear existing decorations
 	decorationProvider.updateIssues([]);
+
 	for (const diagnostic of diagnostics) {
 		// vscode.window.showInformationMessage(diagnostic.message);
 		// Ranges are 1-based, so we need to convert them to 0-based
@@ -109,6 +110,7 @@ function vscodeRuleScan(diagnosticCollection: vscode.DiagnosticCollection, decor
 
 	const misnamedUris = diagnostics.map(d => d.uri);
 	decorationProvider.updateIssues(misnamedUris);
+	decorationProvider.refreshAll();
 	// console.log(diagnostics);
 }
 
@@ -120,6 +122,22 @@ class NamingIssueDecorationProvider implements vscode.FileDecorationProvider {
 	// A map of misnamed items. This can be updated when you scan and find issues.
 	private misnamedItems = new Set<string>();
 
+
+	// Your implementation of provideFileDecoration() here
+
+	public refreshAll() {
+		// @ts-ignore: Passing undefined to signal that all decorations should be refreshed.
+		this._onDidChangeFileDecorations.fire(undefined);
+		// Passing `undefined` signals that all decorations should be refreshed.
+		// this.misnamedItems = new Set<string>();
+		// for (const item in this.misnamedItems) {
+		// 	this._onDidChangeFileDecorations.fire(vscode.Uri.parse(item));
+		// }
+		// const workspaces = vscode.workspace.workspaceFolders?.map(workspace => workspace.uri) || [];
+		// this._onDidChangeFileDecorations.fire(workspaces);
+	}
+
+
 	// Call this method when your diagnostics update.
 	public updateIssues(uris: string[]) {
 		this.misnamedItems = new Set(uris);
@@ -127,8 +145,6 @@ class NamingIssueDecorationProvider implements vscode.FileDecorationProvider {
 	}
 
 	provideFileDecoration(uri: vscode.Uri, _token: vscode.CancellationToken): vscode.ProviderResult<vscode.FileDecoration> {
-
-
 		if (!this.misnamedItems.has(uri.fsPath)) {
 			return;
 		}
