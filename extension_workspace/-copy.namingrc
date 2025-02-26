@@ -1,0 +1,90 @@
+{
+    "rules": [
+        {
+            "type": "extension_not_allowed",
+            "includes": "webroot/**/*.md",
+            "severity": 1,
+            "message": "Extension [*.md] Not allowed under webroot/ as it can show sensitive information.",
+            "href": "https://markdrew.io/docs/phpincfm.html"
+        },
+        {
+            "type": "extension_not_allowed",
+            "includes": "webroot/**/*.php",
+            "severity": 1,
+            "message": "Extension [*.php] Not allowed under webroot/ because PHP sucks",
+            "href": "https://markdrew.io/docs/phpincfm.html"
+        },
+        {
+            "type": "tag",
+            "includes": "**/*.cfc",
+            "value": "cfoutput",
+            "severity": 2,
+            "message": "Dont use CFOutput in CFC files",
+            "href": "https://markdrew.io/noCFoutput.html"
+        },
+        {
+            "type": "folder_not_allowed",
+            "includes": "webroot/**/tests",
+            "severity": 1,
+            "message": "Folder [tests] not allowed under [webroot/] as it can show sensitive information.",
+            "href": "https://markdrew.io/noTests.html"
+        },
+        {
+            "type": "filename_postfix",
+            "excludes": "**/Ignoreme.cfc",
+            "includes": "unit_tests/**/*.cfc",
+            "value": "Test",
+            "severity": 3,
+            "message": "Unit tests should end with <SomeComponent>Test.cfc",
+            "href": "https://markdrew.io/noTests.html"
+        },
+        {
+            "type": "filename_postfix",
+            "includes": "webroot/tests/**/*.cfc",
+            "excludes": "webroot/tests/**/Application.cfc",
+            "value": "Test",
+            "severity": 3,
+            "message": "Unit tests should end with <SomeComponent>Test.cfc",
+            "href": "https://markdrew.io/noTests.html"
+        },
+        {
+            "type": "tag",
+            "includes": "**/*.cfm",
+            "value": "cfdump",
+            "severity": 2,
+            "message": "Dont use CFDump in view files",
+            "href": "https://markdrew.io/noTests.html"
+        },
+        {
+            "type": "function",
+            "includes": "**/*.cfm",
+            "value": "dump",
+            "severity": 2,
+            "message": "Dont use CFDump in view files",
+            "href": "https://markdrew.io/noTests.html"
+        },
+        {
+            "type": "tag",
+            "includes": "**/*.cfm",
+            "value": "cfquery",
+            "severity": 2,
+            "message": "Dont use CFQuery in view files"
+        },
+        {
+            "type": "tag",
+            "includes": "**/*.cfm",
+            "value": "style",
+            "severity": 4,
+            "message": "Avoid using inline CSS in cfm files",
+            "href": "https://markdrew.io/noTests.html"
+        },
+        {
+            "type": "tag",
+            "includes": "**/*.cfm",
+            "value": "script",
+            "severity": 1,
+            "message": "Avoid using inline JavaScript in cfm files",
+            "href": "https://markdrew.io/noTests.html"
+        }
+    ]
+}
