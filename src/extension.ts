@@ -85,7 +85,7 @@ function vscodeRuleScan(diagnosticCollection: vscode.DiagnosticCollection, decor
 			diagnostic.message,
 			Math.max(0, diagnostic.severity - 1)
 		);
-		diagnosticItem.source = 'Naming Convention';
+		diagnosticItem.source = 'namingrc ';
 
 		// Terniary but with obejct. Not super readable but it works.
 		diagnosticItem.code = diagnostic.href ? {
