@@ -18,10 +18,10 @@
         },
         {
             "type": "extension_not_allowed",
-            "includes": "webroot/**/*.md",
+            "includes": "webroot/**/*.bak",
             "severity": 1,
-            "message": "Extension [*.md] Not allowed under webroot/ as it can show sensitive information.",
-            "href": "https://markdrew.io/docs/phpincfm.html"
+            "message": "Avoid using [*.bak] files under webroot/ as it can show sensitive information.",
+            "href": "https://confluence.com/document.html"
         },
         {
             "type": "extension_not_allowed",
@@ -102,6 +102,16 @@
             "message": "Avoid using inline JavaScript in cfm files",
             "href": "https://markdrew.io/noTests.html",
             "name": "NoInlineJS"
+        },
+        {
+            "type": "regex",
+            "includes": "**/*.cf*",
+            "excludes": "**/Ignoreme.cfc",
+            "value": "<cfoutput[^>]*>((?!<\\/cfoutput>)).*(?<!removehtml\\(|removehtmllessstrict\\(|removehtmlleaststrict\\()(?<!\\w)(url\\.|form\\.|cookie\\.|application\\.logincookie).*?<\\/cfoutput>",
+            "severity": 1,
+            "message": "Avoid using cfoutput with url, form, cookie or application scope variables",
+            "href": "https://markdrew.io/noTests.html",
+            "name": "Security XSS"
         }
     ]
 }

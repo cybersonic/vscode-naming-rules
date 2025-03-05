@@ -2,17 +2,17 @@
 
 
 
-The Naming Conventions Extension for VS Code allows you to define naming conventions for your project and then check if the names of your files and folders are compliant with the defined conventions.
+The Naming Rules Extension for VS Code allows you to define naming rules for your project and then check if the names of your files and folders are compliant with the defined rules.
 
-It looks for both files and folders in the workspace and checks if the names are compliant with the defined conventions defined in the `.namingrc.json` file.  It also provides JSON schema support for the `.namingrc.json` file.
+It looks for both files and folders in the workspace and checks if the names are compliant with the defined rules defined in the `.namingrc.json` file.  It also provides JSON schema support for the `.namingrc.json` file.
 
 ## Features
 
 <img src="assets/naming-rules-demo.gif" alt="Demo of the naming rules extension" />
 
-- Define naming conventions for your project
+- Define naming rules for your project
 - Save the rules in a proect specific `.namingrc.json` file
-- Check if the names of your files and folders are compliant with the defined conventions
+- Check if the names of your files and folders are compliant with the defined rules
 - JSON schema support for the `.namingrc.json` file
 
 Rules defined in the `.namingrc.json` are in JSON format and can be defined as follows:

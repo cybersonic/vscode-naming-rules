@@ -27,8 +27,12 @@
     ],
     "commands": [
       {
-        "command": "vscode-naming-conventions.checkRules",
+        "command": "vscode-naming-rules.checkRules",
         "title": "Check Naming Rules"
+      },
+      {
+        "command": "vscode-naming-rules.openConfig",
+        "title": "Open Rules file"
       }
     ]
   },
@@ -52,6 +56,6 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "naming-rules": "^1.1.9"
+    "naming-rules": "^1.1.15"
   }
 }
